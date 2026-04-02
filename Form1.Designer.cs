@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblAppName = new Label();
             txtID = new TextBox();
             txtPW = new TextBox();
@@ -36,6 +37,8 @@
             btnIdClear = new Button();
             btnPwClear = new Button();
             btnPwShow = new Button();
+            txtTimer = new TextBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // lblAppName
@@ -137,13 +140,24 @@
             btnPwShow.TabIndex = 7;
             btnPwShow.Text = "⊙";
             btnPwShow.UseVisualStyleBackColor = true;
-            btnPwShow.Click += button1_Click;
+            btnPwShow.Click += btnPwShow_Click;
+            // 
+            // txtTimer
+            // 
+            txtTimer.Font = new Font("맑은 고딕", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            txtTimer.Location = new Point(172, 312);
+            txtTimer.Name = "txtTimer";
+            txtTimer.Size = new Size(206, 27);
+            txtTimer.TabIndex = 8;
+            txtTimer.Text = "다음 시간 이후 시도하십시오";
+            txtTimer.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(645, 408);
+            Controls.Add(txtTimer);
             Controls.Add(btnPwShow);
             Controls.Add(btnPwClear);
             Controls.Add(btnIdClear);
@@ -168,5 +182,7 @@
         private Button btnIdClear;
         private Button btnPwClear;
         private Button btnPwShow;
+        private TextBox txtTimer;
+        private System.Windows.Forms.Timer timer1;
     }
 }

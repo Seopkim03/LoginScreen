@@ -54,16 +54,27 @@ namespace LoginScreen
         {
             string inputID = txtID.Text;
             string inputPW = txtPW.Text;
-            if (inputID == myID && inputPW == myPW)
+            int PWcounter = 0;
+            if (PWcounter <= 5)
             {
-                lblErrorMessage.Visible = false; // 로그인 성공 시 에러 메시지 숨기기
-                MessageBox.Show("로그인 성공!", "로그인");
+                if (inputID == myID && inputPW == myPW)
+                {
+                    lblErrorMessage.Visible = false; // 로그인 성공 시 에러 메시지 숨기기
+                    MessageBox.Show("로그인 성공!", "로그인");
+                }
+                else
+                {
+                    //MessageBox.Show("로그인 실패~", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblErrorMessage.Visible = true; // 에러 메시지 레이블을 보이도록 설정
+                    PWcounter++;
+                    //btnLogin.Visible = false; // 로그인 버튼 숨기기
+                }
             }
-            else
+            else if (PWcounter > 5)
             {
-                //MessageBox.Show("로그인 실패~", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lblErrorMessage.Visible = true; // 에러 메시지 레이블을 보이도록 설정
-                //btnLogin.Visible = false; // 로그인 버튼 숨기기
+                btnLogin.Enabled = false; // 로그인 버튼 비활성화
+                btnLogin.Visible = false; // 로그인 버튼 숨기기
+                txtTimer.Visible = true; // 타이머 텍스트박스 보이기
             }
         }
 
@@ -95,7 +106,7 @@ namespace LoginScreen
             txtPW.Clear();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPwShow_Click(object sender, EventArgs e)
         {
             txtPW.UseSystemPasswordChar = !txtPW.UseSystemPasswordChar; // 패스워드 보이기/숨기기 토글
         }
