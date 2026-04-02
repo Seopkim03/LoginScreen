@@ -33,6 +33,9 @@
             txtPW = new TextBox();
             btnLogin = new Button();
             lblErrorMessage = new Label();
+            btnIdClear = new Button();
+            btnPwClear = new Button();
+            btnPwShow = new Button();
             SuspendLayout();
             // 
             // lblAppName
@@ -98,11 +101,52 @@
             lblErrorMessage.Text = "아이디 또는 비밀번호가 잘못되었습니다";
             lblErrorMessage.Visible = false;
             // 
+            // btnIdClear
+            // 
+            btnIdClear.FlatStyle = FlatStyle.Flat;
+            btnIdClear.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            btnIdClear.Location = new Point(470, 132);
+            btnIdClear.Name = "btnIdClear";
+            btnIdClear.Size = new Size(27, 32);
+            btnIdClear.TabIndex = 5;
+            btnIdClear.Text = "X";
+            btnIdClear.TextAlign = ContentAlignment.TopCenter;
+            btnIdClear.UseVisualStyleBackColor = true;
+            btnIdClear.Click += btnIdClear_Click;
+            // 
+            // btnPwClear
+            // 
+            btnPwClear.FlatStyle = FlatStyle.Flat;
+            btnPwClear.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            btnPwClear.Location = new Point(470, 204);
+            btnPwClear.Name = "btnPwClear";
+            btnPwClear.Size = new Size(27, 32);
+            btnPwClear.TabIndex = 6;
+            btnPwClear.Text = "X";
+            btnPwClear.TextAlign = ContentAlignment.TopCenter;
+            btnPwClear.UseVisualStyleBackColor = true;
+            btnPwClear.Click += btnPwClear_Click;
+            // 
+            // btnPwShow
+            // 
+            btnPwShow.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPwShow.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            btnPwShow.Location = new Point(512, 204);
+            btnPwShow.Name = "btnPwShow";
+            btnPwShow.Size = new Size(34, 36);
+            btnPwShow.TabIndex = 7;
+            btnPwShow.Text = "⊙";
+            btnPwShow.UseVisualStyleBackColor = true;
+            btnPwShow.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(645, 408);
+            Controls.Add(btnPwShow);
+            Controls.Add(btnPwClear);
+            Controls.Add(btnIdClear);
             Controls.Add(lblErrorMessage);
             Controls.Add(btnLogin);
             Controls.Add(txtPW);
@@ -121,5 +165,8 @@
         private TextBox txtPW;
         private Button btnLogin;
         private Label lblErrorMessage;
+        private Button btnIdClear;
+        private Button btnPwClear;
+        private Button btnPwShow;
     }
 }

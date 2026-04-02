@@ -84,5 +84,20 @@ namespace LoginScreen
                 btnLogin.PerformClick(); // 버튼이 눌린 것처럼 만들기
             }
         }
+
+        private void btnIdClear_Click(object sender, EventArgs e)
+        {
+            txtID.Clear();
+        }
+
+        private void btnPwClear_Click(object sender, EventArgs e)
+        {
+            txtPW.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtPW.UseSystemPasswordChar = !txtPW.UseSystemPasswordChar; // 패스워드 보이기/숨기기 토글
+        }
     }
 }
