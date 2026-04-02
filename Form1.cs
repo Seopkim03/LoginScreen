@@ -56,11 +56,14 @@ namespace LoginScreen
             string inputPW = txtPW.Text;
             if (inputID == myID && inputPW == myPW)
             {
+                lblErrorMessage.Visible = false; // 로그인 성공 시 에러 메시지 숨기기
                 MessageBox.Show("로그인 성공!", "로그인");
             }
             else
             {
-                MessageBox.Show("로그인 실패~", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("로그인 실패~", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorMessage.Visible = true; // 에러 메시지 레이블을 보이도록 설정
+                //btnLogin.Visible = false; // 로그인 버튼 숨기기
             }
         }
 
